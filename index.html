@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D/A Clinic | Facetas em resina com o Dr. Ageu Serafim</title>
+<meta name="description" content="Facetas em resina esculpidas à mão livre, no formato e na cor que combinam com o seu rosto. Dr. Ageu Serafim, CRO-SP 162354, na Penha de França, São Paulo.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#07082E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+  :root { --bg: #07082E; --bg2: #0F1440; --card: #171D52; --ouro: #C9A86A; --ouro-claro: #E3CFA3; --texto: #ECEAF2; --mudo: #A9ACC4; --fio: rgba(201,168,106,.25); }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; }
+  body { margin: 0; background: var(--bg); color: var(--texto); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  h1, h2, h3, p { margin: 0; }
+  h1, h2, h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  a { color: var(--ouro-claro); }
+  img { display: block; }
+  :focus-visible { outline: 2px solid var(--ouro-claro); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+  .sec-pad { padding-left: max(20px, calc((100% - 1040px) / 2)); padding-right: max(20px, calc((100% - 1040px) / 2)); }
+  .t { font-family: 'Marcellus', serif; font-weight: 400; color: var(--ouro); }
+  .h2 { font-size: clamp(27px, 3.4vw, 32px); line-height: 1.2; }
+  .mudo { color: var(--mudo); }
+  .nota { font-size: 13px; color: var(--mudo); max-width: 62ch; }
+
+  .btn { display: inline-block; background: var(--ouro); color: var(--bg); text-decoration: none; font-weight: 600; font-size: 16px; padding: 15px 24px; border-radius: 8px; text-align: center; transition: background .2s; }
+  .btn:hover { background: var(--ouro-claro); color: var(--bg); }
+  .btn-out { display: inline-flex; align-items: center; border: 1px solid var(--ouro); color: var(--ouro-claro); text-decoration: none; font-weight: 500; font-size: 16px; padding: 14px 22px; border-radius: 8px; transition: background .2s, color .2s; }
+  .btn-out:hover { background: var(--ouro); color: var(--bg); }
+
+  .carousel { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .carousel::-webkit-scrollbar { display: none; }
+
+  /* Escala de cor */
+  .shade { appearance: none; background: none; border: 0; padding: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 10px; font: inherit; color: var(--texto); border-radius: 8px; }
+  .shade .tab { display: block; width: 100%; transition: transform 260ms cubic-bezier(.2,.7,.2,1); }
+  .shade .tab path { stroke: rgba(236,234,242,.18); stroke-width: 1; }
+  .shade .lbl { font-size: 14px; color: var(--mudo); padding-bottom: 3px; border-bottom: 2px solid transparent; }
+  .shade[aria-pressed="true"] .tab { transform: translateY(-12px); }
+  .shade[aria-pressed="true"] .tab path { stroke: var(--ouro); stroke-width: 1.2; }
+  .shade[aria-pressed="true"] .lbl { font-weight: 600; color: var(--ouro-claro); border-bottom-color: var(--ouro); }
+
+  /* Casos */
+  .caso-btn { appearance: none; border: 1px solid var(--ouro); padding: 0; background: var(--card); display: block; width: 100%; cursor: zoom-in; border-radius: 9px; overflow: hidden; }
+  .caso-btn img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; }
+
+  /* Dúvidas */
+  .faq-item { border-bottom: 1px solid var(--fio); }
+  .faq-item:last-child { border-bottom: 0; }
+  .faq-item button { appearance: none; background: none; border: 0; width: 100%; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: inherit; color: var(--texto); cursor: pointer; }
+  .faq-item .ic { flex: none; font-size: 24px; line-height: 1; font-weight: 300; color: var(--ouro); transition: transform 200ms ease; }
+  .faq-item button[aria-expanded="true"] .ic { transform: rotate(45deg); }
+  .faq-item p { padding: 0 40px 20px 0; color: var(--mudo); max-width: 62ch; }
+  .faq-item p[hidden] { display: none; }
+
+  /* Lightbox */
+  #lb { position: fixed; inset: 0; z-index: 50; background: rgba(3,4,24,.9); display: none; align-items: center; justify-content: center; padding: 20px; }
+  #lb.open { display: flex; }
+  .fab { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 52px; height: 52px; border-radius: 50%; background: var(--ouro); border: 1px solid var(--ouro-claro); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.35); transition: background .2s; }
+  .fab:hover { background: var(--ouro-claro); }
+</style>
+</head>
+<body>
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(7,8,46,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--fio)">
+  <div class="wrap" style="padding-top:10px;padding-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#topo" aria-label="D/A Clinic, início" class="t" style="display:flex;align-items:center;height:44px;font-size:22px;letter-spacing:.14em;text-decoration:none;white-space:nowrap">D/A CLINIC</a>
+    <a href="https://wa.me/5511978981609?text=Oi,%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o%20na%20D.A%20Clinic" target="_blank" rel="noopener" class="btn-out" style="font-size:15px;color:var(--ouro);border-radius:6px;padding:0 16px;min-height:48px;white-space:nowrap">Agendar avaliação</a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- Abertura -->
+<section class="wrap" style="padding-top:48px;padding-bottom:64px">
+  <div style="display:flex;flex-wrap:wrap;gap:40px 56px;align-items:center">
+    <div style="flex:1 1 380px;min-width:0;max-width:540px">
+      <h1 class="t" style="font-size:clamp(34px,4.8vw,46px);line-height:1.12;letter-spacing:-.01em;text-wrap:balance">Facetas em resina que não parecem facetas.</h1>
+      <p class="mudo" style="margin-top:20px;max-width:46ch;text-wrap:pretty">Cada faceta é esculpida à mão livre, camada por camada, no formato e na cor que combinam com o seu rosto.</p>
+      <div style="margin-top:28px;display:flex">
+        <a href="https://wa.me/5511978981609?text=Oi,%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o%20na%20D.A%20Clinic" target="_blank" rel="noopener" class="btn">Agendar avaliação pelo WhatsApp</a>
+      </div>
+    </div>
+    <div style="flex:1 1 320px;min-width:0;max-width:480px">
+      <img src="assets/clinica-2.jpg" alt="Recepção da D/A Clinic, com o logo na parede" fetchpriority="high" style="width:100%;aspect-ratio:8/7;max-height:420px;object-fit:cover;object-position:50% 38%;border-radius:8px">
+    </div>
+  </div>
+  <ul class="mudo" style="list-style:none;margin:44px 0 0;padding:20px 0 0;border-top:1px solid rgba(201,168,106,.3);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px 32px;font-size:14px;line-height:1.45">
+    <li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#C9A86A" stroke-width="1.3" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M9 16s5-4.6 5-8.5A5 5 0 0 0 4 7.5C4 11.4 9 16 9 16z"/><circle cx="9" cy="7.5" r="1.8"/></svg><span>Rua General Sócrates, 216, Penha de França</span></li>
+    <li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#C9A86A" stroke-width="1.3" aria-hidden="true" style="flex:none;margin-top:1px"><circle cx="9" cy="9" r="6.5"/><path d="M9 5.5V9l2.5 1.5"/></svg><span>Atendimento com hora marcada</span></li>
+    <li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#C9A86A" stroke-width="1.3" aria-hidden="true" style="flex:none;margin-top:1px"><circle cx="9" cy="6" r="3"/><path d="M3.5 16c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/></svg><span>Dr. Ageu Serafim, CRO-SP 162354</span></li>
+  </ul>
+</section>
+
+<!-- Escala de cor -->
+<section style="background:var(--bg2)">
+  <div class="wrap" style="padding-top:64px;padding-bottom:64px;display:flex;flex-wrap:wrap;gap:36px 64px;align-items:center">
+    <div style="flex:1 1 340px;min-width:0;max-width:460px">
+      <h2 class="t h2" style="text-wrap:balance;max-width:24ch">Mais natural ou mais branco? Você escolhe.</h2>
+      <p class="mudo" style="margin-top:14px;max-width:58ch;text-wrap:pretty">A cor das facetas é definida junto com você na avaliação. Toque nos tons para ver a diferença.</p>
+      <p class="nota" style="margin-top:20px">Ilustração. A cor ideal é definida na avaliação, de acordo com o seu rosto e o seu tom de pele.</p>
+    </div>
+    <div style="flex:1 1 360px;min-width:0;max-width:520px">
+      <div class="carousel" style="margin:0 -20px;padding:0 20px">
+        <div role="group" aria-label="Escala de cor" id="escala" style="display:grid;grid-template-columns:repeat(5,minmax(56px,1fr));min-width:320px;gap:clamp(8px,3vw,24px);padding-top:14px"></div>
+      </div>
+      <p aria-live="polite" id="tom" style="margin-top:24px;min-height:3.2em;max-width:46ch;font-size:17px;text-wrap:pretty"></p>
+    </div>
+  </div>
+</section>
+
+<!-- Casos -->
+<section class="sec-pad" style="padding-top:64px;padding-bottom:64px">
+  <h2 class="t h2">Alguns casos do Dr. Ageu</h2>
+  <div class="carousel" id="casos" style="margin:28px -20px 0;padding:0 20px 8px;display:flex;gap:20px;scroll-snap-type:x mandatory;scroll-padding:0 20px"></div>
+  <p class="nota" style="margin-top:24px">Casos realizados pelo Dr. Ageu Serafim com autorização dos pacientes. O resultado depende da avaliação individual.</p>
+</section>
+
+<!-- Como é feito -->
+<section class="sec-pad" style="background:var(--bg2);padding-top:64px;padding-bottom:72px">
+  <h2 class="t h2">Como é feito</h2>
+  <ol style="list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px 40px">
+    <li style="border-top:1px solid rgba(201,168,106,.35);padding-top:18px"><span style="font-size:14px;color:var(--ouro);font-weight:600">1</span><h3 style="margin-top:6px;font-size:18px;font-weight:600">Avaliação</h3><p class="mudo" style="margin-top:6px;text-wrap:pretty">Você conta como imagina o seu sorriso e o Dr. Ageu avalia os seus dentes.</p></li>
+    <li style="border-top:1px solid rgba(201,168,106,.35);padding-top:18px"><span style="font-size:14px;color:var(--ouro);font-weight:600">2</span><h3 style="margin-top:6px;font-size:18px;font-weight:600">Planejamento e execução</h3><p class="mudo" style="margin-top:6px;text-wrap:pretty">Cor, formato e proporção definidos para o seu rosto. Em muitos casos, tudo acontece em uma única sessão.</p></li>
+    <li style="border-top:1px solid rgba(201,168,106,.35);padding-top:18px"><span style="font-size:14px;color:var(--ouro);font-weight:600">3</span><h3 style="margin-top:6px;font-size:18px;font-weight:600">Manutenção</h3><p class="mudo" style="margin-top:6px;text-wrap:pretty">Consultas de acompanhamento mantêm o brilho e a cor por mais tempo.</p></li>
+  </ol>
+</section>
+
+<!-- Já tem lentes -->
+<section style="background:var(--bg);border-top:1px solid var(--ouro);border-bottom:1px solid var(--ouro)">
+  <div class="wrap" style="padding-top:72px;padding-bottom:72px;display:flex;flex-wrap:wrap;gap:40px 64px;align-items:center;justify-content:space-between">
+    <div style="flex:1 1 380px;min-width:0;max-width:540px">
+      <h2 class="t h2" style="line-height:1.22;max-width:26ch;text-wrap:balance">Já tem lentes e não se reconhece no próprio sorriso?</h2>
+      <p style="margin-top:16px;max-width:58ch;text-wrap:pretty">Boa parte de quem procura a clínica já fez lentes antes. Refazer não é só trocar: é entender o que não funcionou e reconstruir forma, textura e proporção.</p>
+      <div style="margin-top:28px;display:flex">
+        <a href="https://wa.me/5511978981609?text=Oi,%20j%C3%A1%20tenho%20lentes%20e%20gostaria%20de%20avaliar%20um%20retrabalho" target="_blank" rel="noopener" class="btn-out">Quero avaliar minhas lentes</a>
+      </div>
+    </div>
+    <img src="assets/retrabalho.jpg" alt="Retrabalho de lentes feito pelo Dr. Ageu Serafim" loading="lazy" style="flex:0 1 auto;width:min(340px,100%);aspect-ratio:4/5;max-height:420px;object-fit:cover;border-radius:8px;border:1px solid var(--ouro)">
+  </div>
+</section>
+
+<!-- Sobre -->
+<section class="sec-pad" style="background:var(--bg2);padding-top:72px;padding-bottom:72px">
+  <div style="display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center">
+    <img src="assets/retrato.jpg" alt="Dr. Ageu Serafim" loading="lazy" style="flex:0 0 auto;width:min(360px,62vw);aspect-ratio:4/5;object-fit:cover;object-position:52% 30%;border-radius:8px;border:1px solid var(--ouro)">
+    <div style="flex:1 1 340px;min-width:0;max-width:560px">
+      <h2 class="t h2">Dr. Ageu Serafim</h2>
+      <p class="mudo" style="margin-top:16px;text-wrap:pretty">Cirurgião-dentista, CRO-SP 162354. Trabalha com lentes em resina estratificada e com o retrabalho de lentes feitas anteriormente. Para ele, um sorriso bem-feito não chama atenção por parecer artificial: chama atenção porque combina com quem sorri.</p>
+    </div>
+  </div>
+</section>
+
+<!-- A clínica -->
+<section style="background:var(--bg)">
+  <div class="wrap" style="padding-top:64px;padding-bottom:64px;display:flex;flex-wrap:wrap;gap:32px 64px;align-items:center;justify-content:space-between">
+    <div style="flex:1 1 340px;min-width:0;max-width:540px">
+      <h2 class="t h2">A D/A Clinic</h2>
+      <p class="mudo" style="margin-top:14px;max-width:58ch;text-wrap:pretty">Um espaço tranquilo na Penha de França, com protocolos de higienização e esterilização.</p>
+    </div>
+    <div style="flex:0 1 auto;width:min(340px,100%)">
+      <img src="assets/clinica-1.jpg" alt="Xícara com o logo sobre o balcão da recepção" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px">
+    </div>
+  </div>
+</section>
+
+<!-- Dúvidas -->
+<section class="sec-pad" style="background:var(--bg2);padding-top:72px;padding-bottom:72px">
+  <h2 class="t h2">Dúvidas comuns</h2>
+  <div id="faq" style="margin-top:24px;background:var(--card);border-radius:8px;padding:0 20px"></div>
+</section>
+
+<!-- Onde estamos -->
+<section class="sec-pad" style="padding-top:72px;padding-bottom:72px">
+  <div style="display:flex;flex-wrap:wrap;gap:32px 56px;align-items:flex-start">
+    <div style="flex:1 1 320px;min-width:0;max-width:440px">
+      <h2 class="t h2">Onde estamos</h2>
+      <p class="mudo" style="margin-top:14px;text-wrap:pretty">Rua General Sócrates, 216, Penha de França, São Paulo (SP).</p>
+      <div style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+        <a href="https://wa.me/5511978981609?text=Oi,%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o%20na%20D.A%20Clinic" target="_blank" rel="noopener" class="btn">Agendar avaliação pelo WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20General%20S%C3%B3crates%2C%20216%2C%20Penha%20de%20Fran%C3%A7a%2C%20S%C3%A3o%20Paulo%20SP" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px;font-size:16px;min-height:48px;display:inline-flex;align-items:center">Abrir no Google Maps</a>
+      </div>
+    </div>
+    <div style="flex:1 1 360px;min-width:0">
+      <iframe title="Mapa da D/A Clinic" src="https://www.google.com/maps?q=Rua%20General%20S%C3%B3crates%2C%20216%2C%20Penha%20de%20Fran%C3%A7a%2C%20S%C3%A3o%20Paulo%20SP&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="display:block;width:100%;height:320px;border:1px solid rgba(201,168,106,.35);border-radius:8px;background:var(--card)"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:var(--bg2);border-top:1px solid var(--fio)">
+  <div class="wrap mudo" style="padding-top:28px;padding-bottom:96px;display:flex;flex-wrap:wrap;gap:16px 40px;align-items:flex-start;font-size:13px;line-height:1.55">
+    <span class="t" style="font-size:18px;letter-spacing:.14em;white-space:nowrap;flex:none">D/A CLINIC</span>
+    <div style="display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 280px">
+      <span>Rua General Sócrates, 216, Penha de França, São Paulo (SP)</span>
+      <span style="display:flex;flex-wrap:wrap;gap:4px 16px">
+        <a href="https://instagram.com/drageuserafim" target="_blank" rel="noopener">@drageuserafim</a>
+        <a href="https://instagram.com/daclinic_" target="_blank" rel="noopener">@daclinic_</a>
+      </span>
+      <span>Dr. Ageu Serafim, cirurgião-dentista, CRO-SP 162354, responsável técnico.</span>
+      <span style="margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase">Proposta de layout · não é o site oficial</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511978981609?text=Oi,%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o%20na%20D.A%20Clinic" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" class="fab">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#07082E" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div id="lb" role="dialog" aria-modal="true">
+  <figure id="lbFig" style="margin:0;width:100%;max-width:560px;background:var(--card);border-radius:8px;padding:12px 12px 16px;position:relative">
+    <button type="button" id="lbClose" aria-label="Fechar" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;border:1px solid var(--ouro);background:var(--bg);color:var(--ouro-claro);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center">×</button>
+    <img id="lbImg" src="" alt="" style="width:100%;max-height:70vh;object-fit:contain;border-radius:6px;background:var(--bg)">
+    <figcaption id="lbCap" style="margin-top:12px;padding:0 4px;font-size:15px;text-wrap:pretty"></figcaption>
+  </figure>
+</div>
+
+<script>
+(() => {
+  // Escala de cor
+  const SHADES = [
+    { name: 'BL1', color: '#FBFBF8', text: 'O branco mais intenso da escala. Para quem quer um sorriso bem claro.' },
+    { name: 'BL2', color: '#F6F4EC', text: 'Bem branco, ainda com naturalidade. Um dos tons mais pedidos.' },
+    { name: 'BL3', color: '#F1ECDD', text: 'Branco equilibrado, que combina com a maioria dos rostos.' },
+    { name: 'A1', color: '#EDE3CA', text: 'Mais próximo da cor natural dos dentes, com brilho.' },
+    { name: 'A2', color: '#E6D7B5', text: 'Tom natural e discreto, para quem quer que ninguém perceba.' },
+  ];
+  const escala = document.getElementById('escala');
+  const tom = document.getElementById('tom');
+  const btns = SHADES.map((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'shade';
+    b.innerHTML = '<span class="tab"><svg viewBox="0 0 40 80" width="100%" style="display:block;max-width:64px;margin:0 auto" aria-hidden="true"><rect x="15" y="0" width="10" height="20" rx="2" fill="#8A8FB0"/><path d="M6 23Q6 18 11 18H29Q34 18 34 23L33 50Q31 75 20 77Q9 75 7 50Z" fill="' + s.color + '"/></svg></span><span class="lbl">' + s.name + '</span>';
+    b.addEventListener('click', () => select(i));
+    escala.appendChild(b);
+    return b;
+  });
+  const select = i => {
+    btns.forEach((b, k) => { b.setAttribute('aria-pressed', k === i); b.setAttribute('aria-label', SHADES[k].name + (k === i ? ', selecionado' : '')); });
+    tom.innerHTML = '<strong style="font-weight:600">' + SHADES[i].name + '.</strong> ' + SHADES[i].text;
+  };
+  select(1);
+
+  // Casos + lightbox
+  const CASES = [
+    { src: 'assets/caso-1.jpg', pos: '30% 70%', alt: 'Sorriso com facetas em resina, caso 1', caption: 'Ela achava os dentes curtos. Queria um sorriso que aparecesse ao sorrir.' },
+    { src: 'assets/caso-2.jpg', pos: '50% 50%', alt: 'Antes e depois, caso 2', caption: 'Mais simetria e o branco que ele queria, sem perder a naturalidade.' },
+    { src: 'assets/caso-3.jpg', pos: '50% 50%', alt: 'Antes e depois, caso 3', caption: 'Fechamento de espaços, refazendo as proporções dente por dente.' },
+  ];
+  const casos = document.getElementById('casos');
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), lbClose = document.getElementById('lbClose');
+  let lastFocus = null;
+  const openLb = c => {
+    lastFocus = document.activeElement;
+    lbImg.src = c.src; lbImg.alt = c.alt; lbCap.textContent = c.caption;
+    lb.classList.add('open'); document.body.style.overflow = 'hidden'; lbClose.focus();
+  };
+  const closeLb = () => { lb.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); };
+  CASES.forEach((c, i) => {
+    const fig = document.createElement('figure');
+    fig.style.cssText = 'margin:0;flex:0 0 min(300px,76vw);scroll-snap-align:start';
+    fig.innerHTML = '<button type="button" class="caso-btn" aria-label="Ampliar caso ' + (i + 1) + '"><img src="' + c.src + '" alt="' + c.alt + '" loading="lazy" style="object-position:' + c.pos + '"></button><figcaption class="mudo" style="margin-top:12px;font-size:14px;line-height:1.5;text-wrap:pretty">' + c.caption + '</figcaption>';
+    fig.querySelector('button').addEventListener('click', () => openLb(c));
+    casos.appendChild(fig);
+  });
+  lb.addEventListener('click', closeLb);
+  document.getElementById('lbFig').addEventListener('click', e => e.stopPropagation());
+  lbClose.addEventListener('click', closeLb);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+
+  // Dúvidas
+  const FAQS = [
+    ['Fica natural?', 'Esse é o objetivo de todo o planejamento. Cor, formato e brilho são ajustados ao seu rosto, e você participa da escolha.'],
+    ['Já tenho lentes. Dá para refazer?', 'Sim. Na avaliação, o Dr. Ageu vê o que pode ser corrigido e explica as opções para o seu caso.'],
+    ['Quanto tempo demora?', 'Depende do caso. Muitos são feitos em uma única sessão. Na avaliação você sabe exatamente como vai ser o seu.'],
+    ['Precisa de manutenção?', 'Sim. Higiene em casa e consultas de acompanhamento ajudam a manter o resultado por mais tempo.'],
+    ['Quanto custa?', 'O valor depende do planejamento de cada caso. Fale com a equipe pelo WhatsApp.'],
+  ];
+  const faq = document.getElementById('faq');
+  const items = FAQS.map(([q, a], i) => {
+    const d = document.createElement('div'); d.className = 'faq-item';
+    d.innerHTML = '<h3 style="font-size:17px;font-weight:500;margin:0"><button type="button" id="faq-b' + i + '" aria-expanded="false" aria-controls="faq-p' + i + '"><span>' + q + '</span><span class="ic" aria-hidden="true">+</span></button></h3><p id="faq-p' + i + '" role="region" aria-labelledby="faq-b' + i + '" hidden>' + a + '</p>';
+    faq.appendChild(d);
+    return d;
+  });
+  items.forEach(d => d.querySelector('button').addEventListener('click', () => {
+    const willOpen = d.querySelector('p').hidden;
+    items.forEach(o => {
+      const open = o === d && willOpen;
+      o.querySelector('p').hidden = !open;
+      o.querySelector('button').setAttribute('aria-expanded', open);
+    });
+  }));
+})();
+</script>
+</body>
+</html>
